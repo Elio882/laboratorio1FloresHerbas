@@ -20,7 +20,6 @@ searchButton.addEventListener('click', async () => {
 const  displayPokemon = (pokemon,spriteType) => {
     pokemonDisplay.innerHTML = '';
     const pokemonName = document.createElement('h2');
-   // const pokemonHabilitys = document.createElement('h2');
     const pokemonMove = document.createElement('h2');
     pokemonName.textContent = pokemon.name;
     //pokemon moves
@@ -29,16 +28,7 @@ const  displayPokemon = (pokemon,spriteType) => {
     const {move} = firstMove;
     const {name} = move;
     console.log(name);
-
-    //pokemon abilities
-    /*const{abilities}= pokemon;
-    const [firstAbility] = abilities;
-    const {ability}= firstAbility;
-    const {name} = ability;
-    console.log(nameAbility);*/
-    //console.log(pokemon.moves[0].move.name) ;
     pokemonMove.textContent = name ;
-    //pokemonHabilitys.textContent = nameAbility;
     if (pokemon.sprites) {
       const spriteImg = document.createElement('img');
       spriteImg.src = pokemon.sprites[spriteType];
@@ -50,17 +40,3 @@ const  displayPokemon = (pokemon,spriteType) => {
     pokemonDisplay.appendChild(pokemonName);
     pokemonDisplay.appendChild(pokemonMove);
 }
-
-/*const displayPokemonSprites = (pokemon, spriteType) => {
-  const spritesContainer = document.getElementById('sprites-container');
-  spritesContainer.innerHTML = ''; 
-
-  if (pokemon.sprites) {
-    const spriteImg = document.createElement('img');
-    spriteImg.src = pokemon.sprites[spriteType];
-    spriteImg.alt = spriteType; 
-    spritesContainer.appendChild(spriteImg);
-  } else {
-    console.error(`No se encontró el sprite "${spriteType}" para este Pokémon.`);
-  }
-};*/
